@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore freshly baked breads, artisan pastries, cakes, desserts and handcrafted coffee at Sweet Treats Bakery & Cafe.">
+  <title>Our Menu | Sweet Treats Artisan Bakery & Cafe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Additional menu-specific styling */
+    .menu-intro {
+      padding: 65px 0 45px;
+      background: var(--vanilla);
+      text-align: center;
+    }
+
+    .menu-intro p {
+      max-width: 660px;
+      margin: 15px auto 0;
+      color: var(--muted);
+    }
+
+    .menu-note {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 16px;
+      border: 1px solid var(--caramel);
+      border-radius: 30px;
+      color: var(--chocolate);
+      font-size: 0.85rem;
+    }
+
+    .menu-section {
+      margin-bottom: 52px;
+    }
+
+    .menu-section-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--caramel);
+    }
+
+    .menu-section-heading .menu-icon {
+      display: grid;
+      flex-shrink: 0;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--vanilla);
+      font-size: 1.7rem;
+    }
+
+    .menu-section-heading p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .real-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 30px;
+    }
+
+    .real-menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 17px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .real-menu-item h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .real-menu-item p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .real-menu-price {
+      flex-shrink: 0;
+      color: #80552C;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .menu-label {
+      display: inline-block;
+      margin-top: 7px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #F8E9C9;
+      color: #654324;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .menu-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-bottom: 55px;
+    }
+
+    .menu-photo-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--vanilla);
+    }
+
+    .menu-photo-card .image-placeholder {
+      aspect-ratio: 5 / 3;
+    }
+
+    .menu-photo-card h3 {
+      padding: 16px 18px 4px;
+      font-size: 1.15rem;
+    }
+
+    .menu-photo-card p {
+      padding: 0 18px 18px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .menu-table-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .real-menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-intro {
+        padding: 45px 0 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main navigation -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-icon" aria-hidden="true">🥐</span>
+        <span>Sweet Treats<small>Artisan Bakery & Cafe</small></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" aria-current="page" href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Menu introduction -->
+    <section class="menu-intro">
+      <div class="container">
+        <span class="eyebrow">Fresh from our oven</span>
+        <h1>Our Menu</h1>
+        <p>
+          Buttery pastries, handcrafted cakes, rustic breads and comforting
+          coffee. Every treat is made to bring a little happiness to your day.
+        </p>
+        <span class="menu-note">Baked with love · Served fresh · Made for sharing</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Featured menu photography -->
+        <div class="menu-photo-grid">
+          <article class="menu-photo-card">
+            <div class="image-placeholder">
+              <img src="pas.jpg"
+                   alt="Freshly baked croissants and Danish pastries">
+            </div>
+            <h3>Morning Pastries</h3>
+            <p>Flaky, buttery favorites for a delicious start.</p>
+          </article>
+
+          <article class="menu-photo-card">
+            <div class="image-placeholder">
+              <img src="cake.jpg"
+                   alt="Chocolate cake and beautifully decorated desserts">
+            </div>
+            <h3>Cakes & Desserts</h3>
+            <p>Sweet little indulgences for every occasion.</p>
+          </article>
+
+          <article class="menu-photo-card">
+            <div class="image-placeholder">
+              <img src="coffee.jpg"
+                   alt="Freshly prepared cappuccino with latte art">
+            </div>
+            <h3>Coffee & More</h3>
+            <p>Your favorite bakes paired with a comforting drink.</p>
+          </article>
+        </div>
+
+        <!-- Category 1: Croissants and pastries -->
+        <section class="menu-section">
+          <div class="menu-section-heading">
+            <span class="menu-icon" aria-hidden="true">🥐</span>
+            <div>
+              <h2>Pastries & Viennoiserie</h2>
+              <p>Golden layers, delicate textures and freshly baked favorites.</p>
+            </div>
+          </div>
+
+          <div class="real-menu-grid">
+            <article class="real-menu-item">
+              <div>
+                <h3>Classic Butter Croissant</h3>
+                <p>Flaky, golden pastry made with rich butter.</p>
+                <span class="menu-label">Customer favorite</span>
+              </div>
+              <span class="real-menu-price">₹120</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Chocolate Croissant</h3>
+                <p>Buttery pastry filled with smooth dark chocolate.</p>
+              </div>
+              <span class="real-menu-price">₹150</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Cinnamon Roll</h3>
+                <p>Soft, swirled dough with cinnamon sugar and a light glaze.</p>
+              </div>
+              <span class="real-menu-price">₹130</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Almond Danish</h3>
+                <p>Delicate laminated pastry topped with almond flakes.</p>
+              </div>
+              <span class="real-menu-price">₹160</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Blueberry Muffin</h3>
+                <p>Soft vanilla muffin with juicy blueberry pieces.</p>
+              </div>
+              <span class="real-menu-price">₹110</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Butter Shortbread Cookie</h3>
+                <p>A crisp, buttery cookie with a delicate crumb.</p>
+              </div>
+              <span class="real-menu-price">₹70</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- Category 2: Cakes and desserts -->
+        <section class="menu-section">
+          <div class="menu-section-heading">
+            <span class="menu-icon" aria-hidden="true">🎂</span>
+            <div>
+              <h2>Cakes & Desserts</h2>
+              <p>Beautifully finished treats for everyday cravings and celebrations.</p>
+            </div>
+          </div>
+
+          <div class="real-menu-grid">
+            <article class="real-menu-item">
+              <div>
+                <h3>Chocolate Truffle Cake</h3>
+                <p>Chocolate sponge layered with silky chocolate ganache.</p>
+                <span class="menu-label">Bestseller</span>
+              </div>
+              <span class="real-menu-price">₹190</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Red Velvet Cake</h3>
+                <p>Soft cocoa sponge paired with cream cheese-style frosting.</p>
+              </div>
+              <span class="real-menu-price">₹200</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Classic Cheesecake</h3>
+                <p>Creamy baked cheesecake on a buttery biscuit base.</p>
+              </div>
+              <span class="real-menu-price">₹230</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Fresh Fruit Tart</h3>
+                <p>Crisp pastry shell, vanilla cream and seasonal fruit.</p>
+              </div>
+              <span class="real-menu-price">₹170</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Chocolate Brownie</h3>
+                <p>A rich, fudgy brownie with a soft chocolate center.</p>
+              </div>
+              <span class="real-menu-price">₹120</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Vanilla Cupcake</h3>
+                <p>Light vanilla sponge finished with a swirl of frosting.</p>
+              </div>
+              <span class="real-menu-price">₹90</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- Category 3: Artisan breads -->
+        <section class="menu-section">
+          <div class="menu-section-heading">
+            <span class="menu-icon" aria-hidden="true">🍞</span>
+            <div>
+              <h2>Artisan Breads</h2>
+              <p>Rustic loaves made for breakfast, sandwiches and sharing.</p>
+            </div>
+          </div>
+
+          <div class="real-menu-grid">
+            <article class="real-menu-item">
+              <div>
+                <h3>Classic Sourdough Loaf</h3>
+                <p>Rustic bread with a crisp crust and chewy interior.</p>
+              </div>
+              <span class="real-menu-price">₹280</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Multigrain Bread</h3>
+                <p>A hearty loaf with a blend of grains and seeds.</p>
+              </div>
+              <span class="real-menu-price">₹180</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Focaccia</h3>
+                <p>Soft Italian-style bread with olive oil and herbs.</p>
+              </div>
+              <span class="real-menu-price">₹200</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Milk Bread Loaf</h3>
+                <p>Soft, fluffy bread ideal for toast and sandwiches.</p>
+              </div>
+              <span class="real-menu-price">₹150</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- Category 4: Coffee and drinks -->
+        <section class="menu-section">
+          <div class="menu-section-heading">
+            <span class="menu-icon" aria-hidden="true">☕</span>
+            <div>
+              <h2>Coffee & Beverages</h2>
+              <p>Freshly prepared drinks to accompany your favorite treat.</p>
+            </div>
+          </div>
+
+          <div class="real-menu-grid">
+            <article class="real-menu-item">
+              <div>
+                <h3>Espresso</h3>
+                <p>A concentrated coffee shot with a rich aroma.</p>
+              </div>
+              <span class="real-menu-price">₹100</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Cappuccino</h3>
+                <p>Espresso with steamed milk and a soft layer of foam.</p>
+                <span class="menu-label">Cafe favorite</span>
+              </div>
+              <span class="real-menu-price">₹150</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Cafe Latte</h3>
+                <p>Smooth espresso blended with steamed milk.</p>
+              </div>
+              <span class="real-menu-price">₹160</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Mocha</h3>
+                <p>A comforting blend of espresso, chocolate and milk.</p>
+              </div>
+              <span class="real-menu-price">₹180</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Hot Chocolate</h3>
+                <p>A rich chocolate drink topped with creamy milk foam.</p>
+              </div>
+              <span class="real-menu-price">₹170</span>
+            </article>
+
+            <article class="real-menu-item">
+              <div>
+                <h3>Masala Chai</h3>
+                <p>Indian tea brewed with milk and warming spices.</p>
+              </div>
+              <span class="real-menu-price">₹80</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- Full pricing table -->
+        <section class="section" style="padding-bottom:35px;">
+          <div class="section-heading">
+            <span class="eyebrow">Quick reference</span>
+            <h2>Menu & Price Guide</h2>
+            <p>Browse our selection and find your next favorite.</p>
+          </div>
+
+          <div class="table-wrap">
+            <table class="menu-table">
+              <thead>
+                <tr>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price (INR)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Classic Butter Croissant</td>
+                  <td>Pastry</td>
+                  <td>Flaky, golden, buttery pastry.</td>
+                  <td>₹120</td>
+                </tr>
+                <tr>
+                  <td>Chocolate Croissant</td>
+                  <td>Pastry</td>
+                  <td>Laminated pastry with chocolate filling.</td>
+                  <td>₹150</td>
+                </tr>
+                <tr>
+                  <td>Chocolate Truffle Cake</td>
+                  <td>Cake</td>
+                  <td>Chocolate sponge and rich ganache.</td>
+                  <td>₹190</td>
+                </tr>
+                <tr>
+                  <td>Classic Cheesecake</td>
+                  <td>Dessert</td>
+                  <td>Creamy cheesecake with a biscuit base.</td>
+                  <td>₹230</td>
+                </tr>
+                <tr>
+                  <td>Fresh Fruit Tart</td>
+                  <td>Dessert</td>
+                  <td>Vanilla cream, pastry and seasonal fruit.</td>
+                  <td>₹170</td>
+                </tr>
+                <tr>
+                  <td>Chocolate Brownie</td>
+                  <td>Dessert</td>
+                  <td>Rich, fudgy chocolate brownie.</td>
+                  <td>₹120</td>
+                </tr>
+                <tr>
+                  <td>Classic Sourdough Loaf</td>
+                  <td>Bread</td>
+                  <td>Rustic loaf with a crisp crust.</td>
+                  <td>₹280</td>
+                </tr>
+                <tr>
+                  <td>Multigrain Bread</td>
+                  <td>Bread</td>
+                  <td>Hearty bread with grains and seeds.</td>
+                  <td>₹180</td>
+                </tr>
+                <tr>
+                  <td>Cappuccino</td>
+                  <td>Beverage</td>
+                  <td>Espresso, steamed milk and foam.</td>
+                  <td>₹150</td>
+                </tr>
+                <tr>
+                  <td>Masala Chai</td>
+                  <td>Beverage</td>
+                  <td>Indian tea with milk and spices.</td>
+                  <td>₹80</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="menu-table-note">
+            Prices are illustrative sample prices in INR, not verified
+            business prices. Availability and final pricing may vary.
+          </p>
+        </section>
+
+        <!-- Custom orders -->
+        <section class="cta-banner">
+          <h2>Something Special in Mind?</h2>
+          <p>
+            From birthday cakes to dessert boxes and bulk bakery orders,
+            tell us what you're planning.
+          </p>
+          <a class="btn btn-primary" href="contact.html">Enquire About an Order</a>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Sweet Treats</h3>
+          <p>Artisan bakes, beautiful cakes and freshly brewed coffee.</p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="menu.html">Menu & Pricing</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Visit Our Cafe</h3>
+          <p>Ahmedabad, Gujarat, India</p>
+          <p>Mon–Sun: 9:00 AM – 9:00 PM</p>
+          <p><a href="contact.html">Contact us for directions and orders.</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sweet Treats Artisan Bakery & Cafe. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
